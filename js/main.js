@@ -1,22 +1,44 @@
 const app = new Vue({
     el: '#root',
     data: {
-        todos: [
-            "fare la spesa",
-            "fare la doccia",
-            "fare il bucato",
+        newTask: "",
+        tasks: [{
+                text: "Fare la spesa",
+                checked: false
+            },
+            {
+                text: "Fare gli esercizi di js",
+                checked: false
+            },
+            {
+                text: "Fare la doccia",
+                checked: false
+            }
         ],
-        newTodo: '',
     },
+
     methods: {
-        addTodo() {
-            if (this.newTodo !== ' ') {
-                this.todos.push(this.newTodo);
-                this.newTodo = '';
+
+        addTask: function() {
+            const task = this.newTask.trim();
+            if (task) {
+                this.tasks.push({ text: task, checked: false });
+                this.newTask = "";
             }
         },
-        removeTodo(index) {
-            this.todos.splice(index, 1);
+
+        removeTask: function(task) {
+            const index = this.tasks.indexOf(task);
+            this.tasks.splice(index, 1);
         },
-    },
+
+        check: function(task) {
+            task.checked = true;
+        },
+
+        isChecked: function(task) {
+            return task.checked;
+        }
+
+    }
 });

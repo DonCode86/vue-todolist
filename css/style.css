@@ -12,7 +12,7 @@ ul {
 }
 
 .todos-container {
-    max-width: 600px;
+    max-width: 800px;
     width: 100%;
     margin: auto;
     position: relative;
@@ -21,21 +21,27 @@ ul {
 li {
     text-align: left;
     padding: 15px;
-    background-color: lightgreen;
-    border: 1px solid green;
+    background-color: #001533;
+    border: 1px solid #fff;
 }
 
-.iconcina {
-    position: absolute;
-    right: 1%;
-}
-
-.iconcina-done {
-    position: absolute;
-    right: 5%;
-}
-
-.completed {
-    text-decoration: line-through;
+.list li.done label {
     color: gray;
+    text-decoration: line-through;
+}
+
+.list li:hover>button {
+    visibility: visible;
+}
+
+.list label {
+    padding-right: 120px;
+    display: inline-block;
+    width: 70%;
+    font-size: 18px;
+    color: #fff;
+}
+
+.delete {
+    cursor: pointer;
 }
