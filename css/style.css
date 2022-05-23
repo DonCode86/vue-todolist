@@ -42,6 +42,7 @@ li {
     color: #fff;
 }
 
-.delete {
+.delete,
+input {
     cursor: pointer;
 }
