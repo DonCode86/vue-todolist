@@ -1,0 +1,41 @@
+.logo-img {
+    width: 10%;
+    margin: 20px;
+}
+
+body {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.todos-container {
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+li {
+    text-align: left;
+    padding: 15px;
+    background-color: lightgreen;
+    border: 1px solid green;
+}
+
+.iconcina {
+    position: absolute;
+    right: 1%;
+}
+
+.iconcina-done {
+    position: absolute;
+    right: 5%;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
