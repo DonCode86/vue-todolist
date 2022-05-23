@@ -18,14 +18,23 @@
             <img class="logo-img" src="img/logo.png" alt="">
         </div>
         <div class="new-todo">
-            <input type="text" placeholder="Inserisci nuova attività" v-model="newTodo" @keyup.enter="addTodo()">
-            <button type="submit" @click="addTodo()">Aggiungi</button>
+            <input v-model="newTask" @keyup.enter="addTask" placeholder="Scrivere una nuova attività" class="text-input">
         </div>
         <div class="todos-container">
-            <ul>
-                <li class="todo" v-for="(todo, index) in todos">{{ todo }} <i class="fas fa-times iconcina" @click="removeTodo(index)"></i><i class="iconcina-done fa-solid fa-check" @click="lineTodo(index)"></i>
-                </li>
-            </ul>
+            <section class="list">
+                <ul class="list-item">
+
+                    <li v-for="task in tasks" :class="{done: isChecked(task)}">
+
+                        <input type="checkbox" class="checkbox" @click="check" v-model="task.checked">
+
+                        <label> {{ task.text }}</label>
+
+                        <button class="delete" @click="removeTask(task)">X</button>
+                    </li>
+                </ul>
+
+            </section>
         </div>
     </div>
     <script src="js/main.js"></script>
